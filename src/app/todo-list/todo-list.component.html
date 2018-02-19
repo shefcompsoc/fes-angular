@@ -1,4 +1,1 @@
-<div *ngFor="let todo of todos" [class.done]="todo.done">
-  <span>{{ todo.text }}</span>
-  <input type="checkbox" #checkbox [checked]="todo.done" (click)="markAs(todo, checkbox.checked)">
-</div>
+<app-todo-item *ngFor="let todo of todos" [todo]="todo"></app-todo-item>

@@ -1,0 +1,4 @@
+<label>
+  {{ todo.text }}
+  <input #checkbox type="checkbox" [checked]="todo.done" (click)="markAs(checkbox.checked)">
+</label>

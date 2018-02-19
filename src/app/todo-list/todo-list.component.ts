@@ -12,13 +12,7 @@ export class TodoListComponent implements OnInit {
     {text: 'go to the cavendish', done: false}
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
-  markAs(todo, done) {
-    this.todos.find((x) => x === todo).done = done;
-  }
-
+  ngOnInit() {}
 }
