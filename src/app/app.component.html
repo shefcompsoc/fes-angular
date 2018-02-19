@@ -1,7 +1,10 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
+<h1>
+  Welcome to {{ title }}!
+</h1>
 
-<app-todo-list></app-todo-list>
+<form>
+  <input #todoText type="text" placeholder="What to do?">
+  <input type="button" value="Add Todo" (click)="addTodo(todoText.value, $event)">
+</form>
+
+<app-todo-list [todos]="todos"></app-todo-list>
