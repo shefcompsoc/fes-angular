@@ -7,4 +7,12 @@
   <input type="button" value="Add Todo" (click)="addTodo(todoText.value, $event)">
 </form>
 
-<app-todo-list [todos]="todos"></app-todo-list>
+<div class="filters">
+  <span (click)="setFilter('none')">All</span>
+  <span (click)="setFilter('complete')">Complete</span>
+  <span (click)="setFilter('incomplete')">Incomplete</span>
+</div>
+
+<hr>
+
+<app-todo-list [todos]="applyFilter(todos)"></app-todo-list>
