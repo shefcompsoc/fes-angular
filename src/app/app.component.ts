@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'Front-end Showdown';
   filter = 'none';
 
-  todos = [
+  _todos = [
     { text: 'explain angular', done: true },
     { text: 'write todo program', done: false },
     { text: 'go to the cavendish', done: false }
@@ -20,7 +20,7 @@ export class AppComponent {
       ev.preventDefault();
     }
 
-    this.todos.push({
+    this._todos.push({
       text,
       done: false
     });
@@ -30,14 +30,14 @@ export class AppComponent {
     this.filter = filter;
   }
 
-  applyFilter(todos) {
+  get todos() {
     if (this.filter === 'complete') {
-      return todos.filter(x => x.done);
+      return this._todos.filter(x => x.done);
     } else if (this.filter === 'incomplete') {
-      return todos.filter(x => !x.done);
+      return this._todos.filter(x => !x.done);
     } else {
       // no filter
-      return todos;
+      return this._todos;
     }
   }
 }

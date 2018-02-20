@@ -2,17 +2,17 @@
   Welcome to {{ title }}!
 </h1>
 
-<form>
+<form (submit)="addTodo(todoText.value, $event)">
   <input #todoText type="text" placeholder="What to do?">
-  <input type="button" value="Add Todo" (click)="addTodo(todoText.value, $event)">
+  <input type="button" value="Add Todo">
 </form>
 
 <div class="filters">
-  <span (click)="setFilter('none')">All</span>
-  <span (click)="setFilter('complete')">Complete</span>
-  <span (click)="setFilter('incomplete')">Incomplete</span>
+  <button (click)="setFilter('none')">All</button>
+  <button (click)="setFilter('complete')">Complete</button>
+  <button (click)="setFilter('incomplete')">Incomplete</button>
 </div>
 
 <hr>
 
-<app-todo-list [todos]="applyFilter(todos)"></app-todo-list>
+<app-todo-list [todos]="todos"></app-todo-list>
