@@ -2,9 +2,9 @@
   Welcome to {{ title }}!
 </h1>
 
-<form (submit)="addTodo(todoText.value, $event)">
+<form (submit)="addTodo(todoText.value); $event.preventDefault()">
   <input #todoText type="text" placeholder="What to do?">
-  <input type="button" value="Add Todo">
+  <input type="submit" value="Add Todo">
 </form>
 
 <div class="filters">

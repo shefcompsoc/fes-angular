@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,15 +15,15 @@ export class AppComponent {
     { text: 'go to the cavendish', done: false }
   ];
 
-  addTodo(text, ev) {
-    if (ev) {
-      ev.preventDefault();
-    }
+  @ViewChild('todoText') textInput: ElementRef;
 
+  addTodo(text) {
     this._todos.push({
       text,
       done: false
     });
+
+    this.textInput.nativeElement.value = '';
   }
 
   setFilter(filter) {
